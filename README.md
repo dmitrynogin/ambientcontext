@@ -1,7 +1,7 @@
 # Ambient Context 
-Ambient operation logging and cancellation
+_Ambient operation logging and cancellation_
 
-[GitHub](https://github.com/dmitrynogin/ambientcontext) and [NuGet](https://www.nuget.org/packages/Ambient.Context/)
+[GitHub](https://github.com/dmitrynogin/ambientcontext) and [NuGet](https://www.nuget.org/packages/Ambient.Context/), [NuGet](https://www.nuget.org/packages/Ambient.AspNetCore/).
 
 How many times you have been writing something like this passing those tedious logger/token parameters?
 
