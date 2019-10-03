@@ -75,11 +75,11 @@ For example, the following code:
 
         private static async Task BetaAsync()
         {
-            using (var op = new Op())
+            using (new Op())
             {
-                op.Trace("Waiting...");
+                Op.Trace("Waiting...");
                 await Task.Delay(100);
-                op.Trace("Continue");
+                Op.Trace("Continue");
             }
         }
 ```
