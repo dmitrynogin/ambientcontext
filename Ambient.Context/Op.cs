@@ -44,11 +44,17 @@ namespace Ambient
                         Parent.Frame.AddRange(Frame);
         }
 
-        public void Trace(string text)
+        public static void Trace(string text)
         {
-            var ms = $"after {Stopwatch.ElapsedMilliseconds} ms";
-            lock (Frame)
-                Frame.Add((Indent + "  " + text, () => ms));
+            var op = Context.Value;
+            if (op == null)
+                Subject.OnNext(text);
+            else
+            {
+                var ms = $"after {op.Stopwatch.ElapsedMilliseconds} ms";
+                lock (op.Frame)
+                    op.Frame.Add((op.Indent + "  " + text, () => ms));
+            }
         }
 
         public override string ToString()
