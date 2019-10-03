@@ -1,5 +1,5 @@
-## Ambient Context 
-### Ambient operation logging and cancellation
+# Ambient Context 
+Ambient operation logging and cancellation
 
 [GitHub](https://github.com/dmitrynogin/ambientcontext) and [NuGet](https://www.nuget.org/packages/Ambient.Context/)
 
