@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ambient.Context", "Ambient.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ambient.AspNetCore", "Ambient.AspNetCore\Ambient.AspNetCore.csproj", "{88FA480B-1FB1-4F6D-9E5B-088655618501}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{FF7E9133-F09C-4BA1-8288-8EBEFE4ACDA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{88FA480B-1FB1-4F6D-9E5B-088655618501}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88FA480B-1FB1-4F6D-9E5B-088655618501}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88FA480B-1FB1-4F6D-9E5B-088655618501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7E9133-F09C-4BA1-8288-8EBEFE4ACDA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7E9133-F09C-4BA1-8288-8EBEFE4ACDA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7E9133-F09C-4BA1-8288-8EBEFE4ACDA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7E9133-F09C-4BA1-8288-8EBEFE4ACDA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

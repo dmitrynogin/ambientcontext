@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 
 namespace Ambient
 {
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AmbientContextAttribute : Attribute, IAsyncActionFilter
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
