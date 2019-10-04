@@ -111,3 +111,56 @@ Which is a way more readable…
 ### ASP.NET Core support
 
 Use `AmbientContextAttribute` on controller class or controller action method to support execution tracing and cancellation.
+
+Your controller might look like this:
+
+```csharp
+    [Route("/"), AmbientContext]    
+    public class GreeterController
+    {
+        public GreeterController(Greeter greeter) => Greeter = greeter;
+        Greeter Greeter { get; }
+
+        [HttpGet]
+        public async Task<string> Get() => await Greeter.GreetAsync();
+    }
+ ```
+ 
+ Where:
+ 
+ ```csharp
+    public class Greeter
+    {
+        public async Task<string> GreetAsync()
+        {
+            using (new Op())
+            {
+                Op.Trace("Started waiting");
+                await Task.Delay(100, Cancellation.Token);
+                Op.Trace("Ready");
+
+                return "Hello World";
+            }
+        }
+    }
+```
+    
+The expected output would be:
+
+```
+Hosting environment: Production
+Content root path: C:\Proj\ambientcontext\Demo\bin\Debug\netcoreapp2.1\
+Now listening on: http://localhost:5000
+Now listening on: https://localhost:5001
+Application started. Press Ctrl+C to shut down.
+http://localhost:5000/ took 123 ms
+  GreetAsync took 109 ms
+    Started waiting after 0 ms
+    Ready after 109 ms
+http://localhost:5000/ took 100 ms
+  GreetAsync took 100 ms
+    Started waiting after 0 ms
+    Ready after 100 ms
+```
+
+Please see the `Demo` project for more details.
